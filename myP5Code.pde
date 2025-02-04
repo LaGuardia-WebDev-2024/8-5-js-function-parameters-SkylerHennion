@@ -12,20 +12,26 @@ setup = function(){
   drawExtraDirt(230,190);
   drawExtraDirt(110,110);
   drawExtraDirt(330,50);
+  
+   
+  drawMole(70,100);
+  drawMole(300,40);
+  drawMole(297,330);
+  drawMole(200,180);
+  
 }
 
 //🟢drawExtraDirect Function - custom function created by Ms. Hall
 var drawExtraDirt = function(dirtX, dirtY){
   fill(205,133,63);
-  var dirtSize = random(30,60);
+  var dirtSize = 30;
   textSize(dirtSize);
   text("☁", dirtX, dirtY);
 };
 
 //🟢drawMole Function - custom function created for this lesson
-var drawMole = function() {
-    var moleX = 248;
-    var moleY = 185;
+var drawMole = function(moleX, moleY) {
+    
 
     noStroke();
     fill(125, 93, 43);
@@ -37,5 +43,34 @@ var drawMole = function() {
     ellipse(moleX+10, moleY-15, 10, 10);
     ellipse(moleX, moleY-5, 10, 10); // nose
     ellipse(moleX, moleY+10, 20, 5); // mouth
+   
 };
+
+var moleMove = 0
+
+draw = function(){
+
+  background(52, 168, 83); // green grass
+
+  fill(0, 0, 0);
+  ellipse(200, 200, 100, 30); // holes!
+  ellipse(70, 120, 100, 30);
+  ellipse(300, 60, 100, 30);
+  ellipse(297, 350, 100, 30);
+
+  drawExtraDirt(230,190);
+  drawExtraDirt(110,110);
+  drawExtraDirt(330,50);
+
+  drawMole(400,200+moleMove);
+  drawMole(70,100);
+  drawMole(300,40);
+  drawMole(297,330);
+  drawMole(200,180);
+  
+  
+moleMove--
+
+
+}
 
