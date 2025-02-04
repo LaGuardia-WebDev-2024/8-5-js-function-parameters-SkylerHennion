@@ -46,10 +46,9 @@ var drawMole = function(moleX, moleY) {
    
 };
 
-var moleMove = 0
+var moleMove = 0; //variable to track movement
 
 draw = function(){
-
   background(52, 168, 83); // green grass
 
   fill(0, 0, 0);
@@ -63,14 +62,16 @@ draw = function(){
   drawExtraDirt(330,50);
 
   drawMole(400,200+moleMove);
-  drawMole(70,100);
-  drawMole(300,40);
-  drawMole(297,330);
-  drawMole(200,180);
+  drawMole(70+moleMove,100);
+  drawMole(300,40-moleMove);
+  drawMole(297-moleMove,330);
+  drawMole(200+moleMove,180+moleMove);
   
-  
-moleMove--
+  moleMove++;
 
+  if(moleMove > 150){
+    moleMove = -200;
+  }
 
-}
+};
 
