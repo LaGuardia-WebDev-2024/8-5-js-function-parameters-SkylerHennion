@@ -26,13 +26,15 @@ var pigMove = 0
   drawPig(-50+pigMove,5);
   drawPig(200+pigMove,5);
   drawPig(450+pigMove,5);
-  drawPig(700+pigMove,5);
-
-
+  draw2Pig(700+pigMove,5);
 
 
 
 pigMove = pigMove + 2;
+
+  if(pigMove > 50){
+   pigMove = -200;
+  }
 
 };
 
@@ -99,15 +101,15 @@ var draw2Pig = function(pig2X, pig2Y){
 
    //fourth pig
   fill(229, 149,  120)
-  arc(200+pigX, 470,50,20,radians(0),radians(190))
-  rect(70+pigX, 325, 20,28)
-  ellipse(130+pigX, 430, 120,150)
-  ellipse(130+pigX, 330,100,100)
-  quad(130+pigX, 300, 170+pigX, 290,  160+pigX, 320)
-  rect(110+pigX, 400,20,60)
-  rect(130+pigX, 480,20,60)
+  arc(200+pig2X, 470,50,20,radians(0),radians(190))
+  rect(70+pig2X, 325, 20,28)
+  ellipse(130+pig2X, 430, 120,150)
+  ellipse(130+pig2X, 330,100,100)
+  quad(130+pig2X, 300, 170+pig2X, 290,  160+pig2X, 320)
+  rect(110+pig2X, 400,20,60)
+  rect(130+pig2X, 480,20,60)
   fill(0,0,0)
-  ellipse(100+pigX, 320, 10,10)
+  ellipse(100+pig2X, 320, 10,10)
 
 }
  
