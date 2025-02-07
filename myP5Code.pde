@@ -1,77 +1,114 @@
 //🟢Setup Procedure - Runs Once to Set The Canvas
 setup = function(){
-  size(600, 400); 
-  background(52, 168, 83); // green grass
+  size(800, 600); 
+ 
 
-  fill(0, 0, 0);
-  ellipse(200, 200, 100, 30); // holes!
-  ellipse(70, 120, 100, 30);
-  ellipse(300, 60, 100, 30);
-  ellipse(297, 350, 100, 30);
 
-  drawExtraDirt(230,190);
-  drawExtraDirt(110,110);
-  drawExtraDirt(330,50);
+
   
-   
-  drawMole(70,100);
-  drawMole(300,40);
-  drawMole(297,330);
-  drawMole(200,180);
+};
+
+
+var pigMove = 0
+
+
+
+  //🔴🔴drawConveyer Function 
+  draw = function(){
   
+ background(173, 216, 230); 
+ strokeWeight(3)
+ fill(130,130,130)
+ rect(0, 500, 800,100);
+
+  drawConveyer(0,0)
+
+  drawPig(-50+pigMove,5);
+  drawPig(200+pigMove,5);
+  drawPig(450+pigMove,5);
+  drawPig(700+pigMove,5);
+
+
+
+
+
+pigMove = pigMove + 2;
+
+};
+
+
+
+  
+  //🟢drawConveyer Function 
+  
+var drawConveyer = function(conveyerX, conveyerY){
+
+
+
+
+
+
+
+  stroke(0,0,0)
+  line(150+conveyerX, 500, 150+conveyerY, 600)
+  line(300+conveyerX, 500, 300+conveyerY, 600)
+  line(450+conveyerX, 500, 450+conveyerY, 600)
+  line(600+conveyerX, 500, 600+conveyerY, 600)
+  line(750+conveyerX, 500, 750+conveyerY, 600)
+};
+  
+  
+  
+  
+  //🟢drawPig Function 
+  
+var drawPig = function(pigX, pigY){
+  
+strokeWeight(2)
+  
+  //first pig
+  fill(229, 149,  120)
+  rect(150+pigX, 480+pigY,20,60)
+  rect(90+pigX, 480+pigY,20,60)
+  ellipse(130+pigX, 430+pigY, 120,150)
+  ellipse(130+pigX, 330+pigY,100,100)
+  quad(170+pigX, 300+pigY, 190+pigX, 285+pigY, 205+pigX, 315+pigY)
+  quad(90+pigX, 300+pigY,  70+pigX, 285+pigY,  55+pigX, 315+pigY)
+  rect(150+pigX, 400+pigY,20,60)
+  rect(90+pigX, 400+pigY,20,60)
+  ellipse(130+pigX, 340+pigY, 60, 30)
+  fill(0,0,0)
+  ellipse(140+pigX, 340+pigY, 5,10)
+  ellipse(120+pigX, 340+pigY, 5,10)
+  ellipse(110+pigX, 320+pigY, 10,10)
+  ellipse(150+pigX, 320+pigY, 10,10)
+  
+  
+  
+  
+
+  
+  
+ 
+ }
+ 
+ 
+ //🟢draw2Pig Function 
+  
+var draw2Pig = function(pig2X, pig2Y){
+
+   //fourth pig
+  fill(229, 149,  120)
+  arc(200+pigX, 470,50,20,radians(0),radians(190))
+  rect(70+pigX, 325, 20,28)
+  ellipse(130+pigX, 430, 120,150)
+  ellipse(130+pigX, 330,100,100)
+  quad(130+pigX, 300, 170+pigX, 290,  160+pigX, 320)
+  rect(110+pigX, 400,20,60)
+  rect(130+pigX, 480,20,60)
+  fill(0,0,0)
+  ellipse(100+pigX, 320, 10,10)
+
 }
-
-//🟢drawExtraDirect Function - custom function created by Ms. Hall
-var drawExtraDirt = function(dirtX, dirtY){
-  fill(205,133,63);
-  var dirtSize = 30;
-  textSize(dirtSize);
-  text("☁", dirtX, dirtY);
-};
-
-//🟢drawMole Function - custom function created for this lesson
-var drawMole = function(moleX, moleY) {
-    
-
-    noStroke();
-    fill(125, 93, 43);
-    ellipse(moleX, moleY, 60, 60); // face
-    fill(255, 237, 209);
-    ellipse(moleX, moleY+10, 33, 28); 
-    fill(0, 0, 0);
-    ellipse(moleX-10, moleY-15, 10, 10); // eyes
-    ellipse(moleX+10, moleY-15, 10, 10);
-    ellipse(moleX, moleY-5, 10, 10); // nose
-    ellipse(moleX, moleY+10, 20, 5); // mouth
-   
-};
-
-var moleMove = 0; //variable to track movement
-
-draw = function(){
-  background(52, 168, 83); // green grass
-
-  fill(0, 0, 0);
-  ellipse(200, 200, 100, 30); // holes!
-  ellipse(70, 120, 100, 30);
-  ellipse(300, 60, 100, 30);
-  ellipse(297, 350, 100, 30);
-
-  drawExtraDirt(230,190);
-  drawExtraDirt(110,110);
-  drawExtraDirt(330,50);
-
-  drawMole(400,200+moleMove);
-  drawMole(70+moleMove,100);
-  drawMole(300,40-moleMove);
-  drawMole(297-moleMove,330);
-  drawMole(200+moleMove,180+moleMove);
-  
-  moleMove++;
-
-  if(moleMove > 150){
-    moleMove = -200;
-  }
-
-};
-
+ 
+ 
